@@ -27,7 +27,10 @@ $isLoggedIn = function_exists('isLoggedIn') ? isLoggedIn() : false;
     <header class="site-header">
         <nav class="site-nav" aria-label="Main Navigation">
             <div class="nav-links">
-                <a href="index.php" class="nav-brand">StudentHub</a>
+                <a href="index.php" class="nav-brand">
+                    <img src="studenthub.png" alt="StudentHub" class="brand-logo">
+                    <span>StudentHub</span>
+                </a>
                 <a href="index.php" class="<?= $active_page === 'home' ? 'active' : '' ?>">Home</a>
                 <a href="about.php" class="<?= $active_page === 'about' ? 'active' : '' ?>">About</a>
                 <a href="events.php" class="<?= $active_page === 'events' ? 'active' : '' ?>">Events</a>

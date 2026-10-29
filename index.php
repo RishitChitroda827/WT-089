@@ -23,7 +23,13 @@ try {
 include __DIR__ . '/includes/header.php';
 ?>
 
-<h1>StudentHub</h1>
+<div class="page-title-banner">
+    <img src="studenthub.png" alt="StudentHub Logo" class="front-logo">
+    <div>
+        <h1 style="margin: 0; padding-bottom: 2px; border-bottom: none;">StudentHub</h1>
+        <div style="font-size: 13px; color: #4b5563;">Charotar University of Science and Technology (CHARUSAT)</div>
+    </div>
+</div>
 <p>
     Welcome to StudentHub, the campus web portal for students and faculty. This portal allows students to view upcoming campus events, register for activities, access student services, and submit inquiries.
 </p>

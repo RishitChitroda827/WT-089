@@ -55,12 +55,45 @@ a:hover {
 }
 
 .nav-brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
     font-size: 16px;
     font-weight: bold;
     color: #ffffff !important;
     text-decoration: none !important;
-    padding: 4px 8px;
-    margin-right: 4px;
+    padding: 2px 6px;
+    margin-right: 6px;
+    vertical-align: middle;
+}
+
+.brand-logo {
+    height: 24px;
+    width: auto;
+    background-color: #ffffff;
+    padding: 1px 4px;
+    border-radius: 3px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.page-title-banner {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 14px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.front-logo {
+    height: 48px;
+    width: auto;
+    background-color: #ffffff;
+    border: 1px solid #d1d5db;
+    border-radius: 4px;
+    padding: 3px 6px;
+    object-fit: contain;
 }
 
 .nav-links a {
@@ -500,6 +533,22 @@ body.dark h1,
 body.dark h2 {
     color: #60a5fa !important;
     border-bottom-color: #374151;
+}
+
+body.dark-mode .page-title-banner,
+body.dark .page-title-banner {
+    border-bottom-color: #374151;
+}
+
+body.dark-mode .page-title-banner div > div,
+body.dark .page-title-banner div > div {
+    color: #9ca3af !important;
+}
+
+body.dark-mode .front-logo,
+body.dark .front-logo {
+    background-color: #ffffff;
+    border-color: #4b5563;
 }
 
 body.dark-mode h3,
