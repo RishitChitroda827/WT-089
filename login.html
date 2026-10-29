@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - StudentHub</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="site-header">
+        <nav class="site-nav" aria-label="Main Navigation">
+            <div class="nav-links">
+                <a href="index.html" class="nav-brand">StudentHub</a>
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="events.html">Events</a>
+                <a href="faq.html">FAQ</a>
+                <a href="pr6.html">Directory</a>
+                <a href="contact.html">Contact</a>
+                <a href="feedback.html">Feedback</a>
+                <a href="dashboard.html">Dashboard</a>
+                <a href="profile.html">Profile</a>
+                <a href="admin.html">Admin</a>
+            </div>
+            <div class="nav-auth">
+                <a href="login.html" class="active">Login</a>
+                <a href="register.html">Register</a>
+                <button type="button" id="themeToggleBtn" class="theme-toggle-btn theme-toggle-trigger">Dark Mode</button>
+            </div>
+        </nav>
+    </header>
+
+    <main id="main" class="page-container">
+        <h1>Portal Login</h1>
+        <p>Sign in with your student or faculty account.</p>
+
+        <form action="login.php" method="POST">
+            <div class="form-group">
+                <label for="l_user">Username or Email: *</label>
+                <input type="text" id="l_user" name="username" placeholder="e.g. 23DCS089 or admin" required>
+            </div>
+
+            <div class="form-group">
+                <label for="l_pass">Password: *</label>
+                <input type="password" id="l_pass" name="password" placeholder="Enter password" required>
+            </div>
+
+            <div class="form-group">
+                <label style="font-weight: normal;">
+                    <input type="checkbox" name="remember"> Remember Me
+                </label>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Sign In">
+            </div>
+        </form>
+
+        <p>
+            Don't have an account yet? <a href="register.html">Register here</a>
+        </p>
+    </main>
+
+    <script src="assets/js/main.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

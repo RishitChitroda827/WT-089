@@ -1,0 +1,92 @@
+[
+    {
+        "id": 1,
+        "question": "What is StudentHub?",
+        "answer": "StudentHub is a student portal for accessing academic information and resources.",
+        "category": "General"
+    },
+    {
+        "id": 2,
+        "question": "Who can use StudentHub?",
+        "answer": "Students can use StudentHub to access useful academic services.",
+        "category": "General"
+    },
+    {
+        "id": 3,
+        "question": "How can I register?",
+        "answer": "Open the registration page and fill in the required details.",
+        "category": "Registration"
+    },
+    {
+        "id": 4,
+        "question": "Can I update my profile?",
+        "answer": "Yes, profile information can be updated from the profile section.",
+        "category": "Profile"
+    },
+    {
+        "id": 5,
+        "question": "Where can I find events?",
+        "answer": "Upcoming college events are available in the Events section.",
+        "category": "Events"
+    },
+    {
+        "id": 6,
+        "question": "How can I join an event?",
+        "answer": "Open the event details and follow the registration instructions.",
+        "category": "Events"
+    },
+    {
+        "id": 7,
+        "question": "How do I contact the college?",
+        "answer": "Use the Contact page to find contact information.",
+        "category": "General"
+    },
+    {
+        "id": 8,
+        "question": "Can I search for students?",
+        "answer": "Student information can be searched using the student search feature.",
+        "category": "Students"
+    },
+    {
+        "id": 9,
+        "question": "How do I access the dashboard?",
+        "answer": "Click the Dashboard option in the navigation menu.",
+        "category": "Dashboard"
+    },
+    {
+        "id": 10,
+        "question": "Can I use StudentHub on mobile?",
+        "answer": "Yes, the website is designed to work on different screen sizes.",
+        "category": "General"
+    },
+    {
+        "id": 11,
+        "question": "How can I view student projects?",
+        "answer": "Student projects can be viewed from the projects section.",
+        "category": "Projects"
+    },
+    {
+        "id": 12,
+        "question": "Is registration required?",
+        "answer": "Registration is required for features that need student information.",
+        "category": "Registration"
+    },
+    {
+        "id": 13,
+        "question": "How can I find workshops?",
+        "answer": "Workshops are listed in the Events section.",
+        "category": "Events"
+    },
+    {
+        "id": 14,
+        "question": "Can I change the website theme?",
+        "answer": "Yes, the light and dark theme button can be used to change the theme.",
+        "category": "Settings"
+    },
+    {
+        "id": 15,
+        "question": "How can I report a problem?",
+        "answer": "Use the Contact page to report any issue.",
+        "category": "General"
+    }
+]

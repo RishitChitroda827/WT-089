@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback - StudentHub</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="site-header">
+        <nav class="site-nav" aria-label="Main Navigation">
+            <div class="nav-links">
+                <a href="index.html" class="nav-brand">StudentHub</a>
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="events.html">Events</a>
+                <a href="faq.html">FAQ</a>
+                <a href="pr6.html">Directory</a>
+                <a href="contact.html">Contact</a>
+                <a href="feedback.html" class="active">Feedback</a>
+                <a href="dashboard.html">Dashboard</a>
+                <a href="profile.html">Profile</a>
+                <a href="admin.html">Admin</a>
+            </div>
+            <div class="nav-auth">
+                <a href="login.html">Login</a>
+                <a href="register.html">Register</a>
+                <button type="button" id="themeToggleBtn" class="theme-toggle-btn theme-toggle-trigger">Dark Mode</button>
+            </div>
+        </nav>
+    </header>
+
+    <main id="main" class="page-container">
+        <h1>Student Feedback Form</h1>
+        <p>Help us improve student portal facilities and campus activities.</p>
+
+        <form action="feedback.php" method="POST">
+            <div class="form-group">
+                <label for="fb_name">Your Name (Optional):</label>
+                <input type="text" id="fb_name" name="name" placeholder="Leave blank for anonymous">
+            </div>
+
+            <div class="form-group">
+                <label for="fb_email">Your Email:</label>
+                <input type="email" id="fb_email" name="email" placeholder="student@charusat.edu.in">
+            </div>
+
+            <div class="form-group">
+                <label for="fb_dept">Department / Branch: *</label>
+                <select id="fb_dept" name="department" required>
+                    <option value="">-- Select Department --</option>
+                    <option value="AI & ML">AI & Machine Learning (CSPIT)</option>
+                    <option value="CSE">Computer Science & Engineering</option>
+                    <option value="IT">Information Technology</option>
+                    <option value="BCA">Bachelor of Computer Applications</option>
+                    <option value="MCA">Master of Computer Applications</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Overall Portal Experience Rating: *</label>
+                <div>
+                    <label style="display: inline-block; font-weight: normal; margin-right: 15px;">
+                        <input type="radio" name="rating" value="5" checked> 5 - Excellent
+                    </label>
+                    <label style="display: inline-block; font-weight: normal; margin-right: 15px;">
+                        <input type="radio" name="rating" value="4"> 4 - Good
+                    </label>
+                    <label style="display: inline-block; font-weight: normal; margin-right: 15px;">
+                        <input type="radio" name="rating" value="3"> 3 - Average
+                    </label>
+                    <label style="display: inline-block; font-weight: normal; margin-right: 15px;">
+                        <input type="radio" name="rating" value="2"> 2 - Fair
+                    </label>
+                    <label style="display: inline-block; font-weight: normal;">
+                        <input type="radio" name="rating" value="1"> 1 - Poor
+                    </label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="fb_comments">Comments and Suggestions: *</label>
+                <textarea id="fb_comments" name="comments" rows="5" required placeholder="Share your suggestions..."></textarea>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Submit Feedback">
+                <input type="reset" value="Reset Form">
+            </div>
+        </form>
+    </main>
+
+    <script src="assets/js/main.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

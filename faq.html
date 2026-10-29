@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ - StudentHub</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="site-header">
+        <nav class="site-nav" aria-label="Main Navigation">
+            <div class="nav-links">
+                <a href="index.html" class="nav-brand">StudentHub</a>
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="events.html">Events</a>
+                <a href="faq.html" class="active">FAQ</a>
+                <a href="pr6.html">Directory</a>
+                <a href="contact.html">Contact</a>
+                <a href="feedback.html">Feedback</a>
+                <a href="dashboard.html">Dashboard</a>
+                <a href="profile.html">Profile</a>
+                <a href="admin.html">Admin</a>
+            </div>
+            <div class="nav-auth">
+                <a href="login.html">Login</a>
+                <a href="register.html">Register</a>
+                <button type="button" id="themeToggleBtn" class="theme-toggle-btn theme-toggle-trigger">Dark Mode</button>
+            </div>
+        </nav>
+    </header>
+
+    <main id="main" class="page-container">
+        <h1>Frequently Asked Questions</h1>
+        <p>Click on any question below to expand or collapse the answer.</p>
+
+        <details>
+            <summary>What is the StudentHub Portal?</summary>
+            <p>
+                StudentHub is the campus web application for students and faculty of Faculty of Technology & Engineering (FTE) at CHARUSAT.
+            </p>
+        </details>
+
+        <details>
+            <summary>How do I register for campus hackathons and technical events?</summary>
+            <p>
+                Navigate to the Events tab, select the event, and register with your student credentials.
+            </p>
+        </details>
+
+        <details>
+            <summary>How does the theme switcher work?</summary>
+            <p>
+                The switcher modifies the <code>dark-mode</code> CSS class on the body and saves the user's choice using browser <code>localStorage</code>.
+            </p>
+            <p>
+                <button type="button" class="btn theme-toggle-trigger">Toggle Light / Dark Theme</button>
+            </p>
+        </details>
+
+        <details>
+            <summary>Who do I contact for placement and training cell support?</summary>
+            <p>
+                You can visit the Contact page and submit a message, or email placement@charusat.edu.in directly.
+            </p>
+        </details>
+
+        <h2>Helpline Contact Details</h2>
+        <p>Click the button below to view student helpline details in a modal dialog:</p>
+        <p>
+            <button type="button" onclick="openCustomModal('demoModal')">View Helpline Details</button>
+        </p>
+
+        <!-- Simple Modal Dialog -->
+        <div class="custom-modal-backdrop" id="demoModal" role="dialog" aria-modal="true">
+            <div class="custom-modal-dialog">
+                <div class="custom-modal-header">
+                    <strong>Student Helpline Details</strong>
+                    <button type="button" onclick="closeCustomModal('demoModal')">Close</button>
+                </div>
+                <p>Faculty of Technology and Engineering (FTE / CSPIT)</p>
+                <p>Charotar University of Science and Technology (CHARUSAT)</p>
+                <p>Office Hours: Monday - Saturday: 9:00 AM to 5:00 PM</p>
+                <p>Phone: +91 2697 265011 / 265021</p>
+                <p>Email: studenthub@charusat.edu.in</p>
+                <div class="custom-modal-footer">
+                    <button type="button" onclick="closeCustomModal('demoModal')">Close</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="assets/js/main.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

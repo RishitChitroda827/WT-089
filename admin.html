@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - StudentHub</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="site-header">
+        <nav class="site-nav" aria-label="Main Navigation">
+            <div class="nav-links">
+                <a href="index.html" class="nav-brand">StudentHub</a>
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="events.html">Events</a>
+                <a href="faq.html">FAQ</a>
+                <a href="pr6.html">Directory</a>
+                <a href="contact.html">Contact</a>
+                <a href="feedback.html">Feedback</a>
+                <a href="dashboard.html">Dashboard</a>
+                <a href="profile.html">Profile</a>
+                <a href="admin.html" class="active">Admin</a>
+            </div>
+            <div class="nav-auth">
+                <a href="login.html">Login</a>
+                <a href="register.html">Register</a>
+                <button type="button" id="themeToggleBtn" class="theme-toggle-btn theme-toggle-trigger">Dark Mode</button>
+            </div>
+        </nav>
+    </header>
+
+    <main id="main" class="page-container">
+        <h1>Campus Administration Control</h1>
+        <p>Administrative monitoring and management modules.</p>
+
+        <h2>Administrative Operations</h2>
+        <ul>
+            <li><a href="students_manage.php">Student Management: Add, view, edit, search, filter, and export student records</a></li>
+            <li><a href="events_manage.php">Event & Poster Management: Add events, upload poster files, and update status</a></li>
+            <li><a href="ajax_crud.php">Quick Event Editor: Asynchronous Fetch API CRUD</a></li>
+            <li><a href="audit_logs.php">Security Audit Logs: Inspect user actions and login trails</a></li>
+            <li><a href="view_csv.php">Submissions & File Records: View contacts and registrations stored in CSV/JSON</a></li>
+        </ul>
+
+        <h2>System Overview</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Metric</th>
+                    <th>Count</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Total Users</strong></td>
+                    <td>3 Accounts</td>
+                    <td>Registered user accounts</td>
+                </tr>
+                <tr>
+                    <td><strong>Enrolled Students</strong></td>
+                    <td>21 Records</td>
+                    <td>Enrolled student database</td>
+                </tr>
+                <tr>
+                    <td><strong>Campus Events</strong></td>
+                    <td>8 Events</td>
+                    <td>Scheduled campus activities</td>
+                </tr>
+                <tr>
+                    <td><strong>Registrations</strong></td>
+                    <td>8 Records</td>
+                    <td>Student event registrations</td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
+
+    <script src="assets/js/main.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Directory - StudentHub</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="site-header">
+        <nav class="site-nav" aria-label="Main Navigation">
+            <div class="nav-links">
+                <a href="index.html" class="nav-brand">StudentHub</a>
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="events.html">Events</a>
+                <a href="faq.html">FAQ</a>
+                <a href="pr6.html" class="active">Directory</a>
+                <a href="contact.html">Contact</a>
+                <a href="feedback.html">Feedback</a>
+                <a href="dashboard.html">Dashboard</a>
+                <a href="profile.html">Profile</a>
+                <a href="admin.html">Admin</a>
+            </div>
+            <div class="nav-auth">
+                <a href="login.html">Login</a>
+                <a href="register.html">Register</a>
+                <button type="button" id="themeToggleBtn" class="theme-toggle-btn theme-toggle-trigger">Dark Mode</button>
+            </div>
+        </nav>
+    </header>
+
+    <main id="main" class="page-container">
+        <h1>Campus Directory & Events Explorer</h1>
+        <p>Live viewer for campus events, student registry, and academic FAQs using Fetch API.</p>
+
+        <!-- Loading and Error States -->
+        <div id="jsonLoading" style="display: none; padding: 10px 0;">
+            Loading records from JSON files...
+        </div>
+        <div id="jsonError" class="alert alert-danger" style="display: none;"></div>
+
+        <!-- Section Switcher -->
+        <div style="margin: 15px 0;">
+            <button type="button" class="btn" id="btn-p6-events" onclick="showP6Section('events')">Events (<span id="eventsCountBadge">...</span>)</button>
+            <button type="button" class="btn btn-secondary" id="btn-p6-students" onclick="showP6Section('students')">Students (<span id="studentsCountBadge">...</span>)</button>
+            <button type="button" class="btn btn-secondary" id="btn-p6-faqs" onclick="showP6Section('faqs')">FAQs</button>
+        </div>
+
+        <!-- SECTION 1: EVENTS -->
+        <div id="p6-section-events" style="display: block;">
+            <h2>Events Directory</h2>
+            <div style="margin-bottom: 12px; display: flex; flex-wrap: wrap; gap: 10px;">
+                <div>
+                    <label for="eventSearch">Search Events:</label>
+                    <input type="text" id="eventSearch" placeholder="Search by title, venue...">
+                </div>
+                <div>
+                    <label for="eventCategoryFilter">Category:</label>
+                    <select id="eventCategoryFilter">
+                        <option value="all">All Categories</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="eventSort">Sort:</label>
+                    <select id="eventSort">
+                        <option value="date-asc">Date (Earliest First)</option>
+                        <option value="date-desc">Date (Latest First)</option>
+                        <option value="title-asc">Title (A - Z)</option>
+                        <option value="title-desc">Title (Z - A)</option>
+                    </select>
+                </div>
+            </div>
+
+            <div id="eventsContainer"></div>
+            <div id="eventPagination" style="margin-top: 10px;"></div>
+        </div>
+
+        <!-- SECTION 2: STUDENTS -->
+        <div id="p6-section-students" style="display: none;">
+            <h2>Students Directory</h2>
+            <div style="margin-bottom: 12px; display: flex; flex-wrap: wrap; gap: 10px;">
+                <div>
+                    <label for="studentSearch">Search Students:</label>
+                    <input type="text" id="studentSearch" placeholder="Search name, enrollment...">
+                </div>
+                <div>
+                    <label for="studentCourseFilter">Course:</label>
+                    <select id="studentCourseFilter">
+                        <option value="all">All Courses</option>
+                        <option value="B.Tech AI-ML">B.Tech AI-ML</option>
+                        <option value="B.Tech CSE">B.Tech CSE</option>
+                        <option value="B.Tech IT">B.Tech IT</option>
+                        <option value="BCA">BCA</option>
+                        <option value="MCA">MCA</option>
+                    </select>
+                </div>
+            </div>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Student Name</th>
+                        <th>Enrollment No</th>
+                        <th>Course</th>
+                        <th>Year</th>
+                        <th>Email</th>
+                    </tr>
+                </thead>
+                <tbody id="studentsTableBody"></tbody>
+            </table>
+            <div id="studentPagination" style="margin-top: 10px;"></div>
+        </div>
+
+        <!-- SECTION 3: FAQS -->
+        <div id="p6-section-faqs" style="display: none;">
+            <h2>Frequently Asked Questions</h2>
+            <div style="margin-bottom: 12px;">
+                <label for="faqSearch">Search FAQs:</label>
+                <input type="text" id="faqSearch" placeholder="Search keywords...">
+            </div>
+            <div id="faqsListContainer"></div>
+        </div>
+    </main>
+
+    <script>
+    function showP6Section(name) {
+        document.getElementById('p6-section-events').style.display = name === 'events' ? 'block' : 'none';
+        document.getElementById('p6-section-students').style.display = name === 'students' ? 'block' : 'none';
+        document.getElementById('p6-section-faqs').style.display = name === 'faqs' ? 'block' : 'none';
+
+        document.getElementById('btn-p6-events').className = name === 'events' ? 'btn' : 'btn btn-secondary';
+        document.getElementById('btn-p6-students').className = name === 'students' ? 'btn' : 'btn btn-secondary';
+        document.getElementById('btn-p6-faqs').className = name === 'faqs' ? 'btn' : 'btn btn-secondary';
+    }
+    </script>
+
+    <script src="assets/js/fetch_data.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

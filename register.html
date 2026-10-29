@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - StudentHub</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="site-header">
+        <nav class="site-nav" aria-label="Main Navigation">
+            <div class="nav-links">
+                <a href="index.html" class="nav-brand">StudentHub</a>
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="events.html">Events</a>
+                <a href="faq.html">FAQ</a>
+                <a href="pr6.html">Directory</a>
+                <a href="contact.html">Contact</a>
+                <a href="feedback.html">Feedback</a>
+                <a href="dashboard.html">Dashboard</a>
+                <a href="profile.html">Profile</a>
+                <a href="admin.html">Admin</a>
+            </div>
+            <div class="nav-auth">
+                <a href="login.html">Login</a>
+                <a href="register.html" class="active">Register</a>
+                <button type="button" id="themeToggleBtn" class="theme-toggle-btn theme-toggle-trigger">Dark Mode</button>
+            </div>
+        </nav>
+    </header>
+
+    <main id="main" class="page-container">
+        <h1>Student Registration</h1>
+        <p>Create a new student account to register for events and workshops.</p>
+
+        <form id="registrationForm" action="register.php" method="POST" novalidate>
+            <div class="form-group">
+                <label for="reg_name">Full Name: *</label>
+                <input type="text" id="reg_name" name="name" required>
+                <div id="nameError" style="color: #cc0000; font-size: 12px;"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="reg_enrollment">Enrollment Number: *</label>
+                <input type="text" id="reg_enrollment" name="enrollment" placeholder="e.g. 23DCS089" required>
+                <div id="enrollError" style="color: #cc0000; font-size: 12px;"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="reg_email">Email Address: *</label>
+                <input type="email" id="reg_email" name="email" placeholder="student@charusat.edu.in" required>
+                <div id="emailError" style="color: #cc0000; font-size: 12px;"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="reg_mobile">Mobile Number: *</label>
+                <input type="tel" id="reg_mobile" name="mobile" placeholder="10-digit number" required>
+                <div id="mobileError" style="color: #cc0000; font-size: 12px;"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="reg_course">Course / Branch: *</label>
+                <select id="reg_course" name="course" required>
+                    <option value="">-- Select Course --</option>
+                    <option value="B.Tech AI-ML">B.Tech AI-ML (CSPIT)</option>
+                    <option value="B.Tech CSE">B.Tech CSE (CSPIT)</option>
+                    <option value="B.Tech IT">B.Tech IT (CSPIT)</option>
+                    <option value="BCA">BCA (FTE)</option>
+                    <option value="MCA">MCA (FTE)</option>
+                </select>
+                <div id="courseError" style="color: #cc0000; font-size: 12px;"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="reg_year">Year of Study: *</label>
+                <select id="reg_year" name="year" required>
+                    <option value="">-- Select Year --</option>
+                    <option value="1">1st Year</option>
+                    <option value="2">2nd Year</option>
+                    <option value="3">3rd Year</option>
+                    <option value="4">4th Year</option>
+                </select>
+                <div id="yearError" style="color: #cc0000; font-size: 12px;"></div>
+            </div>
+
+            <div class="form-group">
+                <label>Gender: *</label>
+                <div>
+                    <label style="display: inline-block; font-weight: normal; margin-right: 15px;">
+                        <input type="radio" name="gender" value="Male" checked> Male
+                    </label>
+                    <label style="display: inline-block; font-weight: normal; margin-right: 15px;">
+                        <input type="radio" name="gender" value="Female"> Female
+                    </label>
+                    <label style="display: inline-block; font-weight: normal;">
+                        <input type="radio" name="gender" value="Other"> Other
+                    </label>
+                </div>
+                <div id="genderError" style="color: #cc0000; font-size: 12px;"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="reg_password">Password: *</label>
+                <input type="password" id="reg_password" name="password" placeholder="At least 6 characters" required>
+                <div class="strength-bar-container">
+                    <div class="strength-bar" id="strengthBar"></div>
+                </div>
+                <div class="strength-text" id="strengthText"></div>
+                <div id="passwordError" style="color: #cc0000; font-size: 12px;"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="reg_confirm_password">Confirm Password: *</label>
+                <input type="password" id="reg_confirm_password" name="confirm_password" placeholder="Re-enter password" required>
+                <div id="confirmPasswordError" style="color: #cc0000; font-size: 12px;"></div>
+            </div>
+
+            <div class="form-group">
+                <label style="font-weight: normal;">
+                    <input type="checkbox" id="reg_terms" name="terms" required>
+                    I accept the campus regulations and terms of service.
+                </label>
+                <div id="termsError" style="color: #cc0000; font-size: 12px;"></div>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Register Account">
+                <input type="reset" value="Reset Form">
+            </div>
+        </form>
+
+        <p>
+            Already registered? <a href="login.html">Sign in here</a>
+        </p>
+    </main>
+
+    <script src="assets/js/validation.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
