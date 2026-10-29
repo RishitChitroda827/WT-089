@@ -37,6 +37,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     if (empty($usernameOrEmail) || empty($password)) {
         $error = "Please enter both username/email and password.";
+    } elseif (!$conn) {
+        $error = "Database is currently disconnected. Please verify MySQL service is running in XAMPP.";
     } else {
         $stmt = $conn->prepare("SELECT id, username, email, password, role FROM users WHERE username = ? OR email = ? LIMIT 1");
         if ($stmt) {

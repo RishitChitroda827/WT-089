@@ -67,7 +67,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     }
 
     // 3. Duplicate Email / Username Check
-    if (empty($errors)) {
+    if (empty($errors) && $conn) {
         $stmt = $conn->prepare("SELECT id FROM users WHERE email = ? OR username = ? LIMIT 1");
         if ($stmt) {
             $stmt->bind_param("ss", $email, $enrollment);
@@ -119,26 +119,30 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $hashed_password = password_hash($password, PASSWORD_DEFAULT);
         $role = 'student';
 
-        $u_stmt = $conn->prepare("INSERT INTO users (username, email, password, role) VALUES (?, ?, ?, ?)");
-        if ($u_stmt) {
-            $u_stmt->bind_param("ssss", $enrollment, $email, $hashed_password, $role);
-            if ($u_stmt->execute()) {
-                $user_id = $u_stmt->insert_id;
+        if ($conn) {
+            $u_stmt = $conn->prepare("INSERT INTO users (username, email, password, role) VALUES (?, ?, ?, ?)");
+            if ($u_stmt) {
+                $u_stmt->bind_param("ssss", $enrollment, $email, $hashed_password, $role);
+                if ($u_stmt->execute()) {
+                    $user_id = $u_stmt->insert_id;
 
-                $st_stmt = $conn->prepare("INSERT INTO students (user_id, name, enrollment_no, email, mobile, course, year, gender, status) VALUES (?, ?, ?, ?, ?, ?, ?, ?, 'Active')");
-                if ($st_stmt) {
-                    $st_stmt->bind_param("isssssis", $user_id, $name, $enrollment, $email, $mobile, $course, $year, $gender);
-                    $st_stmt->execute();
-                    $st_stmt->close();
+                    $st_stmt = $conn->prepare("INSERT INTO students (user_id, name, enrollment_no, email, mobile, course, year, gender, status) VALUES (?, ?, ?, ?, ?, ?, ?, ?, 'Active')");
+                    if ($st_stmt) {
+                        $st_stmt->bind_param("isssssis", $user_id, $name, $enrollment, $email, $mobile, $course, $year, $gender);
+                        $st_stmt->execute();
+                        $st_stmt->close();
+                    }
+
+                    logAudit($conn, "USER_REGISTER", "New student registered: {$enrollment} ({$email})", $user_id);
+
+                    $success_msg = "Account created successfully! Your username is " . htmlspecialchars($enrollment) . ". You can now sign in.";
+                } else {
+                    $errors[] = "Database error: " . $u_stmt->error;
                 }
-
-                logAudit($conn, "USER_REGISTER", "New student registered: {$enrollment} ({$email})", $user_id);
-
-                $success_msg = "Account created successfully! Your username is " . htmlspecialchars($enrollment) . ". You can now sign in.";
-            } else {
-                $errors[] = "Database error: " . $u_stmt->error;
+                $u_stmt->close();
             }
-            $u_stmt->close();
+        } else {
+            $success_msg = "Registration successfully saved to server storage (data/registrations.csv & registrations.json).";
         }
     }
 }

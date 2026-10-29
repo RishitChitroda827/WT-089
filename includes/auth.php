@@ -32,7 +32,7 @@ if (isset($_SESSION['user_id'])) {
         exit;
     }
     $_SESSION['last_activity'] = time();
-} elseif (isset($_COOKIE['remember_token']) && !empty($_COOKIE['remember_token'])) {
+} elseif ($conn && isset($_COOKIE['remember_token']) && !empty($_COOKIE['remember_token'])) {
     // Remember-Me Auto-Login (Practical 10 Advanced Extension)
     $token = $_COOKIE['remember_token'];
     $token_hash = hash('sha256', $token);
@@ -125,7 +125,10 @@ function requireAdmin(): void {
 /**
  * Record action in audit_logs table (Practical 14)
  */
-function logAudit(mysqli $conn, string $action, string $description, ?int $userId = null): void {
+function logAudit(?mysqli $conn, string $action, string $description, ?int $userId = null): void {
+    if (!$conn) {
+        return;
+    }
     if ($userId === null && isset($_SESSION['user_id'])) {
         $userId = (int)$_SESSION['user_id'];
     }
